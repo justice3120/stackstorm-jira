@@ -1,0 +1,6 @@
+---
+  url: "https://company.atlassian.net"
+  username: "hogehoge"
+  password: "fugafuga"
+  poll_interval: 30
+  project: "MY_PROJECT"

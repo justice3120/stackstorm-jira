@@ -19,40 +19,26 @@ class JIRASensor(PollingSensor):
         self._jira_url = None
         # The Consumer Key created while setting up the "Incoming Authentication" in
         # JIRA for the Application Link.
-        self._consumer_key = u''
-        self._rsa_key = None
         self._jira_client = None
-        self._access_token = u''
-        self._access_secret = u''
+        self._username = ''
+        self._password = ''
         self._projects_available = None
         self._poll_interval = 30
         self._project = None
         self._issues_in_project = None
         self._jql_query = None
         self._trigger_name = 'issues_tracker'
-        self._trigger_pack = 'jira'
+        self._trigger_pack = 'jira-basic'
         self._trigger_ref = '.'.join([self._trigger_pack, self._trigger_name])
-
-    def _read_cert(self, file_path):
-        with open(file_path) as f:
-            return f.read()
 
     def setup(self):
         self._jira_url = self._config['url']
-        rsa_cert_file = self._config['rsa_cert_file']
-        if not os.path.exists(rsa_cert_file):
-            raise Exception('Cert file for JIRA OAuth not found at %s.' % rsa_cert_file)
-        self._rsa_key = self._read_cert(rsa_cert_file)
+        self._username = self._config['username']
+        self._password = self._config['password']
         self._poll_interval = self._config.get('poll_interval', self._poll_interval)
-        oauth_creds = {
-            'access_token': self._config['oauth_token'],
-            'access_token_secret': self._config['oauth_secret'],
-            'consumer_key': self._config['consumer_key'],
-            'key_cert': self._rsa_key
-        }
 
         self._jira_client = JIRA(options={'server': self._jira_url},
-                                 oauth=oauth_creds)
+                                 basic_auth=(self._username, self._password))
         if self._projects_available is None:
             self._projects_available = set()
             for proj in self._jira_client.projects():

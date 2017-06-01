@@ -1,11 +1,11 @@
 ---
-ref: jira
-name : jira
-description : st2 content pack containing jira integrations
+ref: jira-basic
+name : jira-basic
+description : st2 content pack containing jira integrations (with Basic Auth)
 keywords:
   - issues
   - ticket management
   - project management
-version : 0.4.0
-author : StackStorm, Inc.
-email : info@stackstorm.com
+version : 0.4.1
+author : Masayoshi Sakamoto
+email : sakamoto3120@gmail.com

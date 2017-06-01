@@ -21,17 +21,10 @@ class BaseJiraAction(Action):
 
         options = {'server': config['url']}
 
-        rsa_cert_file = config['rsa_cert_file']
-        rsa_key_content = self._get_file_content(file_path=rsa_cert_file)
+        username = config['username']
+        password = config['password']
 
-        oauth_creds = {
-            'access_token': config['oauth_token'],
-            'access_token_secret': config['oauth_secret'],
-            'consumer_key': config['consumer_key'],
-            'key_cert': rsa_key_content
-        }
-
-        client = JIRA(options=options, oauth=oauth_creds)
+        client = JIRA(options=options, basic_auth=(username, password))
         return client
 
     def _get_file_content(self, file_path):

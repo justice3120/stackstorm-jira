@@ -4,23 +4,13 @@
     type: "string"
     secret: false
     required: true
-  rsa_cert_file:
-    description: "Path to a private key file, e.g. /home/vagrant/jira.pem"
+  username:
+    description: "User Name"
     type: "string"
     secret: false
     required: true
-  oauth_token:
-    description: "OAuth token"
-    type: "string"
-    secret: true
-    required: true
-  oauth_secret:
-    description: "OAuth secret"
-    type: "string"
-    secret: true
-    required: true
-  consumer_key:
-    description: "Consumer key"
+  password:
+    description: "Password"
     type: "string"
     secret: true
     required: true
