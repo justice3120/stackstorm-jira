@@ -1,6 +1,6 @@
 ---
-ref: jira-basic
-name : jira-basic
+ref: jira_basic
+name : jira_basic
 description : st2 content pack containing jira integrations (with Basic Auth)
 keywords:
   - issues

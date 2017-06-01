@@ -7,12 +7,12 @@ This pack consists of a sample JIRA sensor and a JIRA action.
 You will need to have `gcc` installed on your system. For Ubuntu systems, run `sudo apt-get install gcc`. For Redhat/CentOS
 systems, run `sudo yum install gcc libffi-devel python-devel openssl-devel`. To build the python cryptography dependency (part of the following `st2 pack install` command) 2GB of RAM is recommended. In some cases adding a swap file may eliminate strange gcc compiler errors.
 
-Then install this pack with: `st2 pack install jira-basic`
+Then install this pack with: `st2 pack install jira_basic`
 
 ## Configuration
 
-Copy the example configuration in [jira-basic.yaml.example](./jira-basic.yaml.example)
-to `/opt/stackstorm/configs/jira-basic.yaml` and edit as required.
+Copy the example configuration in [jira_basic.yaml.example](./jira_basic.yaml.example)
+to `/opt/stackstorm/configs/jira_basic.yaml` and edit as required.
 
 * ``url`` - URL of the JIRA instance (e.g. ``https://myproject.atlassian.net``)
 * ``username`` - Username.

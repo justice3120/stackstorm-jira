@@ -28,7 +28,7 @@ class JIRASensor(PollingSensor):
         self._issues_in_project = None
         self._jql_query = None
         self._trigger_name = 'issues_tracker'
-        self._trigger_pack = 'jira-basic'
+        self._trigger_pack = 'jira_basic'
         self._trigger_ref = '.'.join([self._trigger_pack, self._trigger_name])
 
     def setup(self):
