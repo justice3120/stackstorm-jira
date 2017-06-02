@@ -21,6 +21,6 @@
           assignee:
             type: "string"
           fix_versions:
-            type: "string"
+            type: "array"
           issue_type:
             type: "string"
