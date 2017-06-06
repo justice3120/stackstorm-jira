@@ -19,7 +19,7 @@
           created:
             type: "string"
           assignee:
-            type: "string"
+            type: "object"
           fix_versions:
             type: "array"
           issue_type:
